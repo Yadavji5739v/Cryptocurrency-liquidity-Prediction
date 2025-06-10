@@ -21,7 +21,10 @@ import json
 from sklearn.preprocessing import MinMaxScaler
 import numpy as np
 
-with open('scaler_params.json', 'r') as f:
+import os
+
+scaler_path = os.path.join(os.path.dirname(__file__), "scaler_params.json")
+with open(scaler_path, 'r') as f:
     scaler_params = json.load(f)
 
 scaler = MinMaxScaler(feature_range=tuple(scaler_params['feature_range']))
