@@ -7,7 +7,10 @@ import os
 from xgboost import XGBRegressor
 
 model = XGBRegressor()
-model.load_model("xgb_model.json")
+import os
+model_path = os.path.join(os.path.dirname(__file__), "xgb_model.json")
+model.load_model(model_path)
+
 
 
 
